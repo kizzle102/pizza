@@ -44,6 +44,8 @@ describe Pizza do
         Topping.new('pepperoni')
       ]
       pizza = Pizza.new(toppings)
+      pineapple = Topping.new('pineapple', vegetarian: true)
+      pizza.add_topping(pineapple)
 
       expect(pizza.toppings.size).to eq(3)
       expect(pizza.toppings.last.class).to eq(Topping)

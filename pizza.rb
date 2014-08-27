@@ -8,6 +8,10 @@ class Pizza
   def vegetarian?
     self.toppings.all? {|x| x.vegetarian }
   end
+
+  def add_topping(new_topping)
+    @toppings << new_topping
+  end
 end
 
 class Topping
