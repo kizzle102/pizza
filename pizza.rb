@@ -6,11 +6,7 @@ class Pizza
   end
 
   def vegetarian?
-    if self.toppings.all? {|x| x.vegetarian == true}
-      true
-    else
-      false
-    end
+    self.toppings.all? {|x| x.vegetarian }
   end
 end
 
