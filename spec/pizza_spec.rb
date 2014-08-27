@@ -32,8 +32,6 @@ describe Pizza do
       ]
       pizza = Pizza.new(toppings)
 
-      vegetarian = pizza.toppings.vegetarian.all? {|x| x == true}
-
       expect(pizza.vegetarian?).to eq(false)
     end
   end
