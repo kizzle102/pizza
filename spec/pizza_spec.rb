@@ -7,7 +7,7 @@ describe Pizza do
 
   describe '.initialize' do
     it 'records all of the toppings' do
-      topping = [
+      toppings = [
         Topping.new('mushrooms', vegetarian: true),
         Topping.new('pepperoni')
       ]
