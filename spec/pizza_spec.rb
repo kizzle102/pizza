@@ -24,6 +24,7 @@ describe Pizza do
     end     
   end
 
+
   describe '.vegetarian?' do
     it "states whether a pizza is vegetarian or not" do
       toppings = [
@@ -33,6 +34,19 @@ describe Pizza do
       pizza = Pizza.new(toppings)
 
       expect(pizza.vegetarian?).to eq(false)
+    end
+  end
+
+  describe '.add_topping' do
+    it "adds a topping to the pizza topping array" do
+      toppings = [
+        Topping.new('mushrooms', vegetarian: true),
+        Topping.new('pepperoni')
+      ]
+      pizza = Pizza.new(toppings)
+
+      expect(pizza.toppings.size).to eq(3)
+      expect(pizza.toppings.last.class).to eq(Topping)
     end
   end
 end
