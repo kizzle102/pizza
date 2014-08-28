@@ -51,6 +51,20 @@ describe Pizza do
       expect(pizza.toppings.last.class).to eq(Topping)
     end
   end
+
+  describe '.deliver!' do
+    it "creates a delivery time for 30 minutes from now" do
+      toppings = [
+        Topping.new('mushrooms', vegetarian: true),
+        Topping.new('pepperoni')
+      ]
+      pizza = Pizza.new(toppings)
+
+      pizza.deliver!
+
+      (Time.now + 30*60 - pizza.delivery_time).should be < 1
+    end
+  end
 end
 
 describe Topping do
